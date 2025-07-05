@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quick Quiz</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 50px;
+    }
+    .quiz-box {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .option {
+      background: #e0e0e0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .option:hover {
+      background: #d0d0d0;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-box">
+    <h2>Which language is used for web development?</h2>
+    <div class="option" onclick="checkAnswer(this)">Python</div>
+    <div class="option" onclick="checkAnswer(this)">HTML</div>
+    <div class="option" onclick="checkAnswer(this)">C++</div>
+    <div class="option" onclick="checkAnswer(this)">Java</div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer(element) {
+      const result = document.getElementById('result');
+      if (element.innerText === 'HTML') {
+        result.textContent = ' Correct!';
+        result.style.color = 'green';
+      } else {
+        result.textContent = ' Wrong answer, try again.';
+        result.style.color = 'red';
+      }
+    }
+  </script>
+
+</body>
+</html>
